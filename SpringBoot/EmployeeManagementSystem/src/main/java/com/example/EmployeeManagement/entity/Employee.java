@@ -18,6 +18,6 @@ public class Employee {
     private String name;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="frn_key_emp",referencedColumnName = "emp_id")
-    private List<EmployeeSkills> employeeSkills;
+    private List<EmployeeSkills> employeeSkills_id;
 
 }

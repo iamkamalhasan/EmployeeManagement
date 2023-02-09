@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.extern.apachecommons.CommonsLog;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name="skills")
@@ -15,6 +17,7 @@ public class Skills {
     @Column(name="skills_id")
     private long id;
     private String skills;
-
-
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="frn_key_skill",referencedColumnName = "skills_id")
+    private List<EmployeeSkills> employee_id;
 }
