@@ -1,9 +1,9 @@
-package com.example.EmployeeManagement.entity;
+package com.example.EmployeeManagement.entity.entities;
 
 
+import com.example.EmployeeManagement.entity.relations.EmployeeSkills;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.extern.apachecommons.CommonsLog;
 
 import java.util.List;
 

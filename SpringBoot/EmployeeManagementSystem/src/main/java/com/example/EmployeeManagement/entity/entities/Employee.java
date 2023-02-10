@@ -1,15 +1,15 @@
-package com.example.EmployeeManagement.entity;
+package com.example.EmployeeManagement.entity.entities;
 
+import com.example.EmployeeManagement.entity.relations.EmployeeSkills;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Data
 @Table(name="employee")
-public class Employee {
+public class  Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

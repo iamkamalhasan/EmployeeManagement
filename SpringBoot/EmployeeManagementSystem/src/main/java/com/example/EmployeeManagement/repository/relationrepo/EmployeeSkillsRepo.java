@@ -1,6 +1,6 @@
-package com.example.EmployeeManagement.repository;
+package com.example.EmployeeManagement.repository.relationrepo;
 
-import com.example.EmployeeManagement.entity.EmployeeSkills;
+import com.example.EmployeeManagement.entity.relations.EmployeeSkills;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

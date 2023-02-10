@@ -1,7 +1,6 @@
-package com.example.EmployeeManagement.repository;
+package com.example.EmployeeManagement.repository.entityrepo;
 
-import com.example.EmployeeManagement.entity.Skills;
-import org.hibernate.metamodel.model.convert.spi.JpaAttributeConverter;
+import com.example.EmployeeManagement.entity.entities.Skills;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
