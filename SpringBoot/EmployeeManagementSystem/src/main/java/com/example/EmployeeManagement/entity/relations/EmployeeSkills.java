@@ -12,7 +12,7 @@ public class EmployeeSkills {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="emp_skill_id")
     private long id;
-    private long frn_key_emp;
-    private long frn_key_skill;
+    private long emp_id;
+    private long skills_id;
 
 }

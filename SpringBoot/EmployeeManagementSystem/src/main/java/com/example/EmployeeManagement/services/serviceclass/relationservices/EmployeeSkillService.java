@@ -22,13 +22,10 @@ public class EmployeeSkillService implements EmployeeSkillServiceInterface {
     @Override
     public EmployeeSkills addEmployeeSkill(Long emp_id, Long skill_id){
         EmployeeSkills employeeSkills = new EmployeeSkills();
-        employeeSkills.setFrn_key_skill(skill_id);
-        employeeSkills.setFrn_key_emp(emp_id);
+        employeeSkills.setSkills_id(skill_id);
+        employeeSkills.setEmp_id(emp_id);
         return employeeSkillRepo.save(employeeSkills);
     }
 
-    @Override
-    public EmployeeSkills findById(Long id){
-        return employeeSkillRepo.findById(id).orElseThrow(() -> new EmployeeNotFound("skill did not match with employee" + id));
-    }
+
 }
