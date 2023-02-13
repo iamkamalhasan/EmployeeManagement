@@ -16,15 +16,17 @@ public class EmployeeSerives implements EmployeeServicesInterface {
     private EmployeeRepo employeeRepo;
 
     @Override
-    public List<Employee> findAllEmployee(){
+    public List<Employee> findAllEntity(){
         return employeeRepo.findAll();
     }
     @Override
-    public Employee addEmployee(Employee employee){
+    public Employee addEntity(Employee employee){
         return employeeRepo.save(employee);
     }
     @Override
     public Employee findById(Long id){
         return employeeRepo.findById(id).orElseThrow(() -> new EmployeeNotFound("employee not found" + id));
     }
+
 }
+

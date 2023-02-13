@@ -23,12 +23,12 @@ public class SkillsController implements ControllerInterface<Skills>{
     @Override
     @GetMapping("/find-all")
     public ResponseEntity<List<Skills>> findAllEntity() {
-        return new ResponseEntity<>(skillService.findAllSkills(), HttpStatus.OK);
+        return new ResponseEntity<>(skillService.findAllEntity(), HttpStatus.OK);
     }
 
     @PostMapping("/add-skill")
     @Override
     public ResponseEntity<Skills> addEntity(Skills entity) {
-        return new ResponseEntity<>(skillService.addSkills(entity), HttpStatus.OK);
+        return new ResponseEntity<>(skillService.addEntity(entity), HttpStatus.OK);
     }
 }

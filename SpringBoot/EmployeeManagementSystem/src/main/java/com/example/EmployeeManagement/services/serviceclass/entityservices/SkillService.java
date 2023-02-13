@@ -15,7 +15,7 @@ public class SkillService implements SkillServiceInterface {
     private SkillsRepo skillsRepo;
 
     @Override
-    public List<Skills> findAllSkills(){
+    public List<Skills> findAllEntity(){
         return skillsRepo.findAll();
     }
 
@@ -24,7 +24,7 @@ public class SkillService implements SkillServiceInterface {
         return skillsRepo.findById(Id).orElseThrow(()-> new SkillNotFound("skills not found with id"+ Id));
     }
     @Override
-    public Skills addSkills(Skills skills){
+    public Skills addEntity(Skills skills){
         return skillsRepo.save(skills);
     }
 

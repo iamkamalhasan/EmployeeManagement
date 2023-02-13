@@ -24,13 +24,13 @@ public class EmployeeController implements ControllerInterface<Employee>{
     @GetMapping("/find-all")
     public ResponseEntity<List<Employee>> findAllEntity() {
 
-        return new ResponseEntity<>(employeeSerives.findAllEmployee(), HttpStatus.OK) ;
+        return new ResponseEntity<>(employeeSerives.findAllEntity(), HttpStatus.OK) ;
     }
 
     @Override
     @PostMapping("/add-employee")
     public ResponseEntity<Employee> addEntity(Employee entity) {
-        return new ResponseEntity<>(employeeSerives.addEmployee(entity), HttpStatus.OK);
+        return new ResponseEntity<>(employeeSerives.addEntity(entity), HttpStatus.OK);
     }
 
 
