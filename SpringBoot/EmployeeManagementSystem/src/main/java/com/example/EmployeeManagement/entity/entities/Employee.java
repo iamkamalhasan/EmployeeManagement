@@ -20,6 +20,10 @@ public class  Employee {
     @JoinColumn(name="emp_id",referencedColumnName = "emp_id")
     private List<EmployeeSkills> employeeSkills_id;
 
-    private long department_id;
 
+    //private long department_id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="department_id")
+    private Department department;
 }
