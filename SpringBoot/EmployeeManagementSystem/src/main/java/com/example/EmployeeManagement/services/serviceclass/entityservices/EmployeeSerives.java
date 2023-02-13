@@ -10,20 +10,20 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EmployeeSerives implements EmployeeServicesInterface {
+public class EmployeeSerives {
 
     @Autowired
     private EmployeeRepo employeeRepo;
 
-    @Override
+
     public List<Employee> findAllEntity(){
         return employeeRepo.findAll();
     }
-    @Override
+
     public Employee addEntity(Employee employee){
         return employeeRepo.save(employee);
     }
-    @Override
+
     public Employee findById(Long id){
         return employeeRepo.findById(id).orElseThrow(() -> new EmployeeNotFound("employee not found" + id));
     }

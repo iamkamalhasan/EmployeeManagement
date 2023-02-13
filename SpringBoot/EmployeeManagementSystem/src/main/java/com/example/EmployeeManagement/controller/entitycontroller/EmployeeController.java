@@ -2,6 +2,7 @@ package com.example.EmployeeManagement.controller.entitycontroller;
 
 import com.example.EmployeeManagement.controller.ControllerInterface;
 import com.example.EmployeeManagement.entity.entities.Employee;
+import com.example.EmployeeManagement.services.serviceclass.entityservices.EmployeeSerives;
 import com.example.EmployeeManagement.services.serviceinterface.entityinterface.EmployeeServicesInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,22 +16,22 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/employee")
-public class EmployeeController implements ControllerInterface<Employee>{
+public class EmployeeController {
 
     @Autowired
-    private EmployeeServicesInterface employeeSerives;
+    private EmployeeSerives employeeSerives;
 
-    @Override
+
     @GetMapping("/find-all")
     public ResponseEntity<List<Employee>> findAllEntity() {
 
         return new ResponseEntity<>(employeeSerives.findAllEntity(), HttpStatus.OK) ;
     }
 
-    @Override
+
     @PostMapping("/add-employee")
-    public ResponseEntity<Employee> addEntity(Employee entity) {
-        return new ResponseEntity<>(employeeSerives.addEntity(entity), HttpStatus.OK);
+    public Employee addEntity(Employee entity) {
+        return employeeSerives.addEntity(entity);
     }
 
 

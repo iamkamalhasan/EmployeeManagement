@@ -17,17 +17,9 @@ public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "department_id")
+
     private long id;
     private String department;
-
-    //@OneToMany(cascade = CascadeType.ALL)
-    //@JoinColumn(name="department_id",referencedColumnName = "department_id")
-    //private List<Employee> employee_id;
-
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name="department_id")
-    private List<Employee> employee;
 
 
 }
