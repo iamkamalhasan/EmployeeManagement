@@ -6,6 +6,7 @@ import com.example.EmployeeManagement.employeeproject.entity.EmployeeProject;
 import com.example.EmployeeManagement.employeeproject.service.EmployeeProjectInterface;
 import com.example.EmployeeManagement.project.entity.Project;
 import com.example.EmployeeManagement.project.requests.AddProjectRequest;
+import com.example.EmployeeManagement.project.requests.UpdateProjectRequest;
 import com.example.EmployeeManagement.project.response.ProjectResponse;
 import com.example.EmployeeManagement.project.service.ProjectServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,16 +32,25 @@ public class ProjectController{
     @PostMapping("/add-project")
     public ResponseEntity<Project> addEntities(@RequestBody AddProjectRequest eReq) {
         Project project = new Project(eReq);
+        project.setStatus(eReq.getStatus());
         projectServiceInterface.addEntity(project);
-//        Employee employee = new Employee();
-//        for(Long L: eReq.getEmp_pro_id()){
-//            EmployeeProjectTeam employeeProjectTeam = new EmployeeProjectTeam();
-//            employeeProjectTeam.setProject(project);
-//            employeeProjectTeam.setEmployee(employee);
-//            employeeProjectTeamInterface.addEntity(employeeProjectTeam);
-//        }
         return new ResponseEntity<>(project, HttpStatus.OK);
     }
+
+    @PutMapping("/update-project")
+    public ResponseEntity<String> updateEntities(@RequestBody UpdateProjectRequest eReq) {
+        Project project = projectServiceInterface.findById(eReq.getId());
+        if(eReq.getName()!=null){
+            project.setProjectName(eReq.getName());
+        }
+        else if(eReq.getStatus()!=null){
+            project.setStatus(eReq.getStatus());
+        }
+        else if(eReq.()!=)
+        projectServiceInterface.updateEntity(project);
+        return new ResponseEntity<>("project updated", HttpStatus.OK);
+    }
+
 
     @GetMapping("/find-all")
     public ResponseEntity<List<ProjectResponse>> findAllEntities() {
@@ -50,6 +60,7 @@ public class ProjectController{
             ProjectResponse eResponse = new ProjectResponse();
             eResponse.setId(e.getId());
             eResponse.setProjectName(e.getProjectName());
+            eResponse.setStatus(e.getStatus());
             List<Long> emp_id = new ArrayList<>();
             for(EmployeeProject d : e.getEmployeeProjects()){
                 emp_id.add(d.getId());
