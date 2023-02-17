@@ -2,6 +2,7 @@ package com.example.EmployeeManagement.employeeproject.entity;
 
 import com.example.EmployeeManagement.employee.enity.Employee;
 import com.example.EmployeeManagement.project.entity.Project;
+import com.example.EmployeeManagement.teams.entity.Teams;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,4 +23,7 @@ public class EmployeeProject {
     @JoinColumn(name= "project_id")
     private Project project;
 
+    @ManyToOne
+    @JoinColumn(name="team_id")
+    private Teams teams;
 }

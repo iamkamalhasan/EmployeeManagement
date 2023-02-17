@@ -7,6 +7,7 @@ import com.example.EmployeeManagement.employee.service.EmployeeServicesInterface
 import com.example.EmployeeManagement.employeeproject.entity.EmployeeProject;
 import com.example.EmployeeManagement.employee.requests.EmployeeRequest;
 import com.example.EmployeeManagement.employeeproject.service.EmployeeProjectInterface;
+import com.example.EmployeeManagement.project.entity.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,9 +39,10 @@ public class EmployeeController {
             eResponse.setEmployeeName(e.getName());
             List<Long> emp_pro_id = new ArrayList<>();
             for(EmployeeProject d : e.getEmployeeProjects()){
-                emp_pro_id.add(d.getId());
+                Project project = d.getProject();
+                emp_pro_id.add(project.getId());
             }
-            eResponse.setEmp_pro_id(emp_pro_id);
+            eResponse.setProject_id(emp_pro_id);
             responseList.add(eResponse);
         });
 

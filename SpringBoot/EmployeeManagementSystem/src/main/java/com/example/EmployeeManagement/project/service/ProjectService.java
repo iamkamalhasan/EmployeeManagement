@@ -1,6 +1,8 @@
 package com.example.EmployeeManagement.project.service;
 
 import com.example.EmployeeManagement.employee.exception.EmployeeNotFound;
+import com.example.EmployeeManagement.project.Enums.ProjectStatus;
+import com.example.EmployeeManagement.project.Enums.ProjectType;
 import com.example.EmployeeManagement.project.entity.Project;
 import com.example.EmployeeManagement.project.exception.ProjectNotFound;
 import com.example.EmployeeManagement.project.repository.ProjectRepo;
@@ -37,6 +39,16 @@ public class ProjectService implements ProjectServiceInterface {
     @Override
     public Project updateEntity(Project entity) {
         return projectRepo.save(entity);
+    }
+
+    @Override
+    public List<Project> findByStatus(ProjectStatus status){
+        return projectRepo.findByStatus(status);
+    }
+
+    @Override
+    public List<Project> findByType(ProjectType type) {
+        return projectRepo.findByType(type);
     }
 
     @Override

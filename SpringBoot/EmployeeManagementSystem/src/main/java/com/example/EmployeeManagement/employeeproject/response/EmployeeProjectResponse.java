@@ -9,5 +9,6 @@ public class EmployeeProjectResponse {
     private long id;
     private long project_id;
     private long employee_id;
+    private long team_id;
 
 }

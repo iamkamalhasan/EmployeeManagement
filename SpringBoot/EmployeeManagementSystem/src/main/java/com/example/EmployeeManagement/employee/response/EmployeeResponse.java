@@ -10,5 +10,5 @@ import java.util.List;
 public class EmployeeResponse {
     private Long id;
     private String employeeName;
-    private List<Long> emp_pro_id;
+    private List<Long> project_id;
 }

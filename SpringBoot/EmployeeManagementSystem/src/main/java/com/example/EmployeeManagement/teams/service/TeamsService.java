@@ -1,6 +1,8 @@
 package com.example.EmployeeManagement.teams.service;
 
+import com.example.EmployeeManagement.project.exception.ProjectNotFound;
 import com.example.EmployeeManagement.teams.entity.Teams;
+import com.example.EmployeeManagement.teams.exception.TeamNotFound;
 import com.example.EmployeeManagement.teams.repository.TeamsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +40,12 @@ public class TeamsService implements TeamsServiceInterface{
 
     @Override
     public Teams findById(Long Id) {
-        return null;
+        return teamsRepo.findById(Id).orElseThrow(() -> new TeamNotFound("Team nod found with" + Id));
+    }
+
+    @Override
+    public List<Teams> findByProject(Long Id) {
+       return teamsRepo.findByProject(Id);
     }
 }
+

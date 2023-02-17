@@ -1,7 +1,10 @@
 package com.example.EmployeeManagement.teams.entity;
 
+import com.example.EmployeeManagement.employeeproject.entity.EmployeeProject;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Table(name="teams")
 @Data
@@ -11,7 +14,12 @@ public class Teams {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "team_id")
     Long Id;
+
     @Column(name = "team_name")
     String name;
     //@OneToMany(mappedBy = "teams")
+    Long project;
+    @OneToMany(mappedBy = "teams")
+    private List<EmployeeProject> employeeProjects;
+
 }

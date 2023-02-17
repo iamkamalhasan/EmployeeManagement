@@ -8,6 +8,7 @@ import com.example.EmployeeManagement.project.requests.UpdateProjectRequest;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -32,8 +33,18 @@ public class Project{
     @Enumerated(EnumType.STRING)
     ProjectType type;
 
+    @Column(name="start_date")
+    String startDate;
+    @Column(name="end_date")
+    String endDate;
+
+    @Column(name="project_valuation")
+    Long valuation;
+
     @OneToMany(mappedBy = "project")
     private List<EmployeeProject> employeeProjects;
+
+    private List<Long> Teams_id;
 
     public Project(AddProjectRequest req){
         this.projectName = req.getName();

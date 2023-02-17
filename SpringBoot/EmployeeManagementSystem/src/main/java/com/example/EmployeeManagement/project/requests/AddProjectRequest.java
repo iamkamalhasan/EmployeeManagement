@@ -16,4 +16,10 @@ public class AddProjectRequest {
 
     private ProjectType type;
 
+    private String startDate;
+
+    private String endDate;
+
+    private Long valuation;
+
 }

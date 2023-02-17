@@ -5,11 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class EmployeeProjectRequest {
-
-    private long employee_id;
-
+public class ProjectTeamRequest {
     private long project_id;
-
     private long team_id;
+
 }
