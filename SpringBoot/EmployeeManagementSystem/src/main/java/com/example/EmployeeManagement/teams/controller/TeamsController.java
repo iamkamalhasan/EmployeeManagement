@@ -59,7 +59,7 @@ public class TeamsController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
     @PutMapping("/update/teams")
-    public ResponseEntity<Teams> updateEntity(Teams entity) {
+    public ResponseEntity<Teams> updateEntity(@RequestBody Teams entity) {
         return new ResponseEntity<>(teamsServiceInterface.updateEntity(entity),HttpStatus.OK);
     }
 

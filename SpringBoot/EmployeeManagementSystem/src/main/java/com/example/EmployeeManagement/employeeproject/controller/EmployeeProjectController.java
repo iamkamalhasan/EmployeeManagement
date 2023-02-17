@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/employee-project-team")
 public class EmployeeProjectController {
 
