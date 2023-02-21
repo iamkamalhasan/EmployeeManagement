@@ -25,6 +25,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/project")
 public class ProjectController{
 

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/teams")
 public class TeamsController {
 
