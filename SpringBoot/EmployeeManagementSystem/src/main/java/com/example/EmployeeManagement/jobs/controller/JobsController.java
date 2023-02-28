@@ -34,6 +34,7 @@ public class JobsController {
     public ResponseEntity<JobsResponse> findById(@PathVariable(name = "id")Long id){
         return new ResponseEntity<>(jobsService.findById(id),HttpStatus.OK);
     }
+
 //    @PutMapping("update/jobs")
 //    public ResponseEntity<JobsResponse> updateEntity(@RequestBody JobsRequest eReq){
 //        return new ResponseEntity<>(jobsService.updateEntity(eReq),HttpStatus.OK);

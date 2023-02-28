@@ -44,6 +44,8 @@ public class Jobs {
     @Column(name="job_status")
     private String job_Status;
 
+    private Long project_id;
+
     public Jobs(JobsRequest jobsRequest){
         this.jobName = jobsRequest.getJobName();
         this.startDate = jobsRequest.getStartDate();

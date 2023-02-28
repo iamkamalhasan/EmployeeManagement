@@ -46,6 +46,8 @@ public class Project{
 
     private List<Long> Teams_id;
 
+    private List<Long> jobs_id;
+
     public Project(AddProjectRequest req){
         this.projectName = req.getName();
     }
