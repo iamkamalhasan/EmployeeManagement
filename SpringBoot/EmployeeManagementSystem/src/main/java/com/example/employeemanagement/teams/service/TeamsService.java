@@ -28,7 +28,7 @@ public class TeamsService implements TeamsServiceInterface{
     }
 
     @Override
-    public void deleteEntity(Long Id) {
+    public void deleteById(Long Id) {
         teamsRepo.deleteById(Id);
     }
 

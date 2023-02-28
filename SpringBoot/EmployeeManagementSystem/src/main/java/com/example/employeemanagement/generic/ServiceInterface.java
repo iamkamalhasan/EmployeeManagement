@@ -14,7 +14,7 @@ public interface ServiceInterface<T> {
 
     T removeEntity(Long Id);
 
-    void deleteEntity(Long Id);
+    void deleteById(Long Id);
 
     T updateEntity(T entity);
 

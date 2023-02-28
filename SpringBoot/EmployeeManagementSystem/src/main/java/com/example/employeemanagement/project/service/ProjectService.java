@@ -31,7 +31,7 @@ public class ProjectService implements ProjectServiceInterface {
     }
 
     @Override
-    public void deleteEntity(Long Id) {
+    public void deleteById(Long Id) {
         projectRepo.deleteById(Id);
     }
 

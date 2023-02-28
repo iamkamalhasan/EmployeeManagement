@@ -53,7 +53,7 @@ public class TeamsController {
 
     @DeleteMapping("/delete-teams/{id}")
     public ResponseEntity<?> deleteEntity(@PathVariable Long Id) {
-        teamsServiceInterface.deleteEntity(Id);
+        teamsServiceInterface.deleteById(Id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
     @PutMapping("/update/teams")

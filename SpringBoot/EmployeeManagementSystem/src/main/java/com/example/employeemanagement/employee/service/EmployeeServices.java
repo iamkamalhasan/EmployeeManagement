@@ -34,7 +34,7 @@ public class EmployeeServices implements EmployeeServicesInterface {
     }
 
     @Override
-    public void deleteEntity(Long Id) {
+    public void deleteById(Long Id) {
         employeeRepo.deleteById(Id);
     }
 

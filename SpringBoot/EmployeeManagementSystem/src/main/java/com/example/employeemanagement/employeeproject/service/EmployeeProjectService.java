@@ -29,7 +29,7 @@ public class EmployeeProjectService implements EmployeeProjectInterface {
     }
 
     @Override
-    public void deleteEntity(Long Id) {
+    public void deleteById(Long Id) {
         employeeProjectRepo.deleteById(Id);
     }
 
