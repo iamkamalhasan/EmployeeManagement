@@ -21,7 +21,7 @@ public class JobsController {
     @Autowired
     JobsService jobsService;
 
-    @PostMapping("/add-project")
+    @PostMapping("/add/jobs")
     public ResponseEntity<JobsResponse> addEntities(@RequestBody JobsRequest eReq) {
         return new ResponseEntity<>(jobsService.addEntity(eReq), HttpStatus.OK);
     }
@@ -29,5 +29,14 @@ public class JobsController {
     public ResponseEntity<List<JobsResponse>> findAllEntity(){
         return new ResponseEntity<List<JobsResponse>>(jobsService.findAllEntity(),HttpStatus.OK);
     }
+
+    @GetMapping("/find/{id}")
+    public ResponseEntity<JobsResponse> findById(@PathVariable(name = "id")Long id){
+        return new ResponseEntity<>(jobsService.findById(id),HttpStatus.OK);
+    }
+//    @PutMapping("update/jobs")
+//    public ResponseEntity<JobsResponse> updateEntity(@RequestBody JobsRequest eReq){
+//        return new ResponseEntity<>(jobsService.updateEntity(eReq),HttpStatus.OK);
+//    }
 
 }

@@ -1,17 +1,25 @@
 package com.example.EmployeeManagement.timesheet.enitity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
-@Table(name="teams")
+@Table(name="TimeSheets")
 @Data
 @Entity
 public class TimeSheet {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "time_id")
+    private long id;
     @Column(name="approval_status")
     private String status;
 
-    
+    @Column(name="billable_status")
+    private String billable_status;
+
+
+
 }
+
+
